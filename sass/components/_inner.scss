@@ -1,0 +1,44 @@
+.inner {
+    background-color: $inner;
+
+    &__header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 5rem;
+        
+        & span {
+            font-family: $museo100;
+            font-size: 1.7rem;
+            color: #000;
+            line-height: 1.352;
+            text-align: center;
+        }
+
+        & span > b {
+            font-family: $museo900;
+        }
+    }
+
+    &__card {
+        max-width: 103rem;
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        padding: 6rem 10rem;
+        position: relative;
+        top: -8rem;
+        left: 50%;
+        margin-left: -51.5rem;
+        box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .2);
+
+        @include respond(tab-port) {
+            margin-left: 0;
+            left: 0;
+        }   
+        
+        @include respond(phone) {
+            padding: 1.5rem 1rem;
+        }  
+    }
+}

@@ -1,0 +1,112 @@
+.property {
+    padding: 9rem 0;
+    background-image: url(../img/city.png);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+
+    @include respond(tab-port) {
+        padding: 4rem 0;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;       
+    }
+
+    &__composition {
+        display: flex;
+        align-items: center;
+
+        @include respond(phone) {
+            display: none;
+        }
+    }
+
+    &__img {
+        position: absolute;
+        z-index: 10;
+
+        &--1 {
+            left: 35%;
+            top: 13rem;
+            z-index: 1;
+        }
+
+        &--2 {
+            left: 40%;
+            top: 7rem;
+        }
+
+        &--3 {
+            top: 13rem;
+            left: 50%;
+            z-index: 1;
+        }
+    }
+
+    &__cards {
+        position: relative;
+        max-width: 71rem;
+    }
+
+    &__card {
+        background-color: $grey;
+        padding: 5rem 3rem 4rem 3rem;
+        box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .2);
+
+        &:nth-child(1) {
+            margin-top: 10rem;
+            position: relative;
+            z-index: 8;
+            margin-bottom: 1rem;
+
+            @include respond(phone) {
+                margin: 0;
+            }
+        }
+
+        &:last-child {
+            margin-bottom: 5rem;
+        }
+    }
+
+    &__heading {
+        font-family: $museo900;
+        text-transform: uppercase;
+        line-height: 1;
+        font-size: 1.8rem;
+        color: #000;
+        text-align: center;
+        padding-bottom: 3rem;
+        margin-top: 3rem;
+    }
+
+    &__description {
+        font-family: $museo100;
+        font-size: 1.7rem;
+        color: #000;
+        line-height: 1.2;
+        text-align: center;
+    }
+
+    &__compass-wrapper {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        background-color: $aqua;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        left: 44%;
+        top: 32rem;
+        z-index: 10;
+
+        @include respond(tab-port) {
+            display: none;
+        }
+    }
+
+}

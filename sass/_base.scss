@@ -1,0 +1,73 @@
+@font-face {
+	font-family: 'Museo Sans Cyrl 100';
+	src: local('PFCentroSlabProBold'),
+		   url('../fonts/MuseoSansCyrl.woff') format('woff');
+	  font-weight: normal;
+	  font-style: normal;
+}
+
+@font-face {
+	font-family: 'Museo Sans Cyrl 900';
+	src: local('PFCentroSlabProMedium'),
+		   url('../fonts/MuseoSansCyrl_3.woff') format('woff');
+	  font-weight: bold;
+	  font-style: normal;
+}
+
+.container {
+    width: auto;
+    max-width: 123rem;
+    box-sizing: border-box;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.visually-hidden {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+  
+  .visually-hidden:not(:focus):not(:active) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+}
+
+*, 
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;  
+}
+
+body {
+	font-family: "Museo Sans Cyrl 100", sans-serif;
+}
+
+.text-white {
+    color: #fff;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}

@@ -1,0 +1,45 @@
+.ask {
+    padding: 9rem 0;
+    background: url(../img/form_background.png),
+                linear-gradient(90deg, rgba(255, 255, 255, .14), rgba(255, 255, 255, .14)),
+                linear-gradient(to bottom, $aqua, $aqua); 
+
+    @include respond(phone) {
+        padding: 4rem 0;
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__heading {
+        font-family: $museo100;
+        font-size: 1.8rem;
+        line-height: 1;
+        color: #fff;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    &__img-wrapper {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        border: 1px dashed rgba(255, 255, 255, .91);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        margin-bottom: 3rem;
+    }
+
+    &__img {
+        width: 1.5rem;
+        height: 1.5rem;
+        transform: rotate(90deg);
+    }
+}

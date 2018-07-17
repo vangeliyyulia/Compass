@@ -1,0 +1,43 @@
+.footer {
+    background-color: $aqua;
+    box-shadow: 4px 0 131px 0 rgba(0, 0, 0, .26);
+
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
+
+        @include respond(phone) {
+            justify-content: center;
+        }
+    }
+
+    &__copyright {
+        font-family: $museo100;
+        font-size: 1.4rem;
+        color: rgba(255, 255, 255, .76);
+
+        &--policy {
+            border-bottom: 1px dotted rgba(255, 255, 255, .76);
+
+            & > a {
+                text-decoration: none;
+                color: rgba(255, 255, 255, .76);
+            }
+        }
+
+        @include respond(tab-port) {
+            display: none;
+        }
+    }
+}
+
+.top {
+    height: 36px;
+    background-color: $aqua;
+    background-image: url(../img/top.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}

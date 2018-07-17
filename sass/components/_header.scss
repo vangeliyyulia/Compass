@@ -1,0 +1,295 @@
+@font-face {
+	font-family: 'Museo Sans Cyrl 100';
+	src: local('PFCentroSlabProBold'),
+		   url('../fonts/MuseoSansCyrl.woff') format('woff');
+	  font-weight: normal;
+	  font-style: normal;
+}
+
+@font-face {
+	font-family: 'Museo Sans Cyrl 900';
+	src: local('PFCentroSlabProMedium'),
+		   url('../fonts/MuseoSansCyrl_3.woff') format('woff');
+	  font-weight: bold;
+	  font-style: normal;
+}
+
+.container {
+    width: auto;
+    max-width: 123rem;
+    box-sizing: border-box;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.header {
+    height: 100vh;
+    background-image: linear-gradient(130deg, rgba($blue, .69), rgba(0, 0, 0, .69)),
+                      url(../img/head_bg.jpg);
+    background-size: cover;
+    background-position: center top;
+
+    &__nav {
+        background: linear-gradient(130deg, rgba($blue, .65), rgba(0, 0, 0, .65));
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        @include respond(tab-port) {
+            position: relative;
+            justify-content: space-between;
+        }
+    }
+
+    &__list {
+        list-style: none;
+        display: flex;
+
+        @include respond(tab-port) {
+            flex-direction: column;
+            text-align: center;
+            width: 80%;
+            background: linear-gradient(130deg, $blue, #000); 
+            position: absolute;
+            top: 100%;
+            right: 0;
+            transition: all .5s;
+            opacity: 1;
+            z-index: 1;
+        }
+
+        @include respond(phone) {
+            width: 100%;
+        }
+    }
+
+    &__list.active {
+
+        @include respond(tab-port) {
+            top: -500px;
+            opacity: 0;
+        }
+    }
+
+    &__item {    
+        transition: background .2s;
+
+        &:not(:last-child) {
+            margin-right: 1rem;
+        }
+
+        @include respond(tab-port) {
+            margin: 0;
+            padding: 1rem;
+
+            &:not(:last-child) {
+                margin-right: 0;
+            }
+
+            &:hover {
+                background: rgba(255, 255, 255, .25);
+            }
+        }
+    }
+
+    &__phone {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: auto;
+        padding-left: 4rem;
+        position: relative;
+
+        &::before {
+            @include pseudo;
+            width: 2.6rem;
+            height: 2.6rem;
+            top: 20%;
+            left: 0;
+            border-radius: 50%;
+            border: 1px dashed $aqua;
+            background-image: url(../img/phone.png);
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        & > * {
+            color: #fff;
+            font-family: $museo900;
+            font-size: 1.6rem;
+            line-height: 1.312;
+        }
+
+        @include respond(phone) {
+            display: none;
+        }
+
+        &--footer::before {
+            border: 1px dashed #fff;
+            background-image: url(../img/white.png);            
+        }
+    }
+
+    &__link {
+        display: inline-block;
+        padding: 1rem;
+        text-decoration: none;
+        color: #fff;
+        text-transform: uppercase;
+        font-family: $museo900;
+        font-size: 1.1rem;
+        line-height: 1.5;
+        letter-spacing: .1em;
+        transition: all .2s;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, .25);
+            border-radius: 3px;
+        }
+    }
+
+    &__heading {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: #fff;
+        font-family: $museo900;
+        text-transform: uppercase;
+        margin-top: 20vh;
+        opacity: .91;
+        margin-bottom: 25vh;
+
+        &--main {
+            margin-bottom: 1rem;
+            letter-spacing: .4em;
+            font-size: 9rem;
+
+            @include respond(tab-port) {
+                font-size: 7rem;
+                letter-spacing: .3em;
+            }
+
+            @include respond(phone) {
+                font-size: 4.5rem;
+                letter-spacing: .1em;
+            }
+        }
+    
+        &--sub {
+            font-size: 6rem;
+            letter-spacing: .1em;
+
+            @include respond(tab-port) {
+                font-size: 4rem;
+            }
+
+            @include respond(phone) {
+                font-size: 2rem;
+            }
+        }
+
+        &--inner {
+            font-size: 7rem;
+            margin-bottom: 2rem;
+            letter-spacing: .4em;
+
+            @include respond(tab-port) {
+                font-size: 5rem;
+                letter-spacing: .2em;
+            }  
+
+            @include respond(phone) {
+                font-size: 4rem;
+                letter-spacing: 0;
+            }  
+        }
+
+        &--move {
+            font-size: 5rem;
+            letter-spacing: .2em;
+            margin-bottom: 2rem;
+
+            @include respond(phone) {
+                font-size: 3.3rem;
+                letter-spacing: 0;
+            } 
+        }
+    }
+}
+
+.heading__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $aqua;
+    margin-right: 2rem;
+    padding: .9rem 0;
+}
+
+.arrow-down {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    border: 1px dashed rgba(255, 255, 255, .91);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    &__img {
+        fill: rgba(255, 255, 255, .91);
+        width: 3rem;
+        height: 3rem;
+    }
+
+    &--inner {
+        margin-bottom: 12rem;
+    }
+}
+
+.menu-link {
+    display: none;
+
+    &__img {
+        fill: #fff;
+    }
+
+    @include respond(tab-port) {
+        display: block;
+        margin-left: 2rem;
+    }
+}
+
+.header__inner {
+    background-image: linear-gradient(130deg, rgba($blue, .69), rgba(0, 0, 0, .69)),
+                      url(../img/header-inner.jpg);
+    background-size: cover;
+    background-position: center top;
+
+    &--heading {
+        color: #fff;
+        font-family: $museo900;
+        font-size: 6rem;
+        letter-spacing: .3em;
+        text-transform: uppercase;
+        margin-top: 7rem;
+        opacity: .91;
+        margin-bottom: 3rem;       
+    }
+}

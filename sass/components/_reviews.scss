@@ -1,0 +1,188 @@
+.reviews {
+    padding: 9rem 0;
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 75%;
+        margin: 0 auto;
+        padding: 1rem;
+
+        @include respond(tab-port) {
+            width: 100%;
+            margin: 0;
+        }
+
+        @include respond(phone) {
+            flex-direction: column;
+            width: 100%;
+        }
+    }
+
+    &__img-wrapper {
+        width: 13.2rem;
+        height: 13.2rem;
+        position: relative;
+        top: 50%;
+        left: 60px;
+
+        @include respond(phone) {
+            top: 0;
+            left: 0;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        padding: 4rem 3rem 4rem 12rem;
+        box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .2);
+
+        @include respond(phone) {
+            padding: 1rem;
+        }
+    }
+
+    &__links {
+        display: flex;
+        margin-bottom: 2rem;
+
+        @include respond(phone) {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    &__name {
+        font-family: $museo900;
+        text-transform: uppercase;
+        color: #000;
+        font-size: 1.6rem;
+        line-height: 1.0625;
+        margin-right: 4rem;
+
+        @include respond(phone) {
+            margin-right: 0;
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__link {
+        font-family: $museo900;
+        text-transform: uppercase;
+        color: $aqua;
+        font-size: 1.2rem;
+        line-height: 1.6;
+    }
+
+    &__city {
+        font-family: $museo100;
+        color: $aqua;
+        font-size: 1.2rem;
+        line-height: 1.4;
+        margin-left: auto;
+
+        @include respond(phone) {
+            margin-left: 0;
+        }
+    }
+
+    &__desc {
+        font-family: $museo100;
+        font-style: italic;
+        font-size: 1.4rem;
+        line-height: 1.42;
+    }
+}
+
+.owl-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.owl-dot {
+    width: 15px;
+    height: 15px;
+    margin: 0 3px;
+    background-color: transparent;
+    border: 1px dashed $aqua;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.owl-dot.active {
+    outline: none;
+    background-color: $aqua;
+}
+
+.owl-nav button {
+    background-color: transparent;
+    border: none;
+    width: 16px;
+    height: 29px;
+    background-image: url(../img/slider_arrows.svg);
+    opacity: .5;
+    transition: all .25s ease;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    &:focus,
+    &:active {
+        outline: none;
+        opacity: 1;
+    }
+
+    @include respond(tab-port) {
+        display: none;
+    }
+}
+
+.owl-prev {
+    position: absolute;
+    left: 110px;
+    top: 40%;
+}
+
+.owl-next {
+    position: absolute;
+    top: 40%;
+    right: 60px;
+    transform: rotate(180deg);
+}
+
+.owl-item .reviews__desc,
+.owl-item .reviews__name,
+.owl-item .reviews__link,
+.owl-item .reviews__city {
+    transition: all 1s ease;
+    opacity: 0;
+    transform: translate3d(100px, 0, 0);
+}
+
+.owl-item .reviews__desc {
+    max-width: 60rem;
+}
+
+.owl-item.active .reviews__desc,
+.owl-item.active .reviews__name,
+.owl-item.active .reviews__link,
+.owl-item.active .reviews__city {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+.owl-item .reviews__name,
+.owl-item .reviews__link,
+.owl-item .reviews__city {
+    transition-delay: .4s;
+}
+
+.owl-item .reviews__desc {
+    transition-delay: .8s;
+}

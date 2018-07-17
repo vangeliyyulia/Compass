@@ -1,0 +1,17 @@
+.section-heading {
+    font-family: $museo900;
+    text-transform: uppercase;
+    font-size: 4.2rem;
+    line-height: 1;
+    color: #000;
+    text-align: center;
+    margin-bottom: 6rem;
+
+    &--moving {
+        color: #fff;
+    }
+
+    @include respond(phone) {
+        font-size: 2.5rem;
+    }
+}

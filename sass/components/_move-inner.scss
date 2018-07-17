@@ -1,0 +1,40 @@
+.move {
+    &__house {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+
+        @include respond(tab-port) {
+            flex-direction: column;
+        }
+    }
+
+    &__package {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include respond(tab-port) {
+            flex-direction: column-reverse;
+        }
+    }
+
+    &__img-wrapper {
+        margin-bottom: 2rem;
+    }
+
+    &__desc {
+        font-family: $museo100;
+        font-size: 1.6rem;
+        color: #000;
+        line-height: 1.352;
+        text-align: center;
+        width: 50%;
+        max-width: 41.3rem;
+
+        @include respond(tab-port) {
+            width: 100%;
+        }
+    }
+}

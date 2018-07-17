@@ -1,0 +1,120 @@
+.contacts {
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+
+        @include respond(tab-port) {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    &__left {
+        margin-top: 12rem;
+
+        @include respond(tab-port) {
+            margin-top: 0;
+            margin-bottom: 3rem;
+
+            &:nth-child(3) {
+                flex: 100%;
+            }
+        }
+    }
+
+    &__right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: $aqua;
+        border-radius: 3px;
+        padding: 4rem;
+
+        @include respond(tab-port) {
+            width: 80%;
+        }
+
+        @include respond(phone) {
+            width: auto;
+        }
+    }
+
+    &__source {
+        display: flex;
+        flex-direction: column;
+        padding-left: 7rem;
+        position: relative;
+
+        &::before {
+            @include pseudo;
+            top: 20%;
+            left: 0;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 5rem;
+        }
+
+        &--phone::before {
+            background-image: url(../img/cellphone.png);
+            width: 2.4rem;
+            height: 4.2rem;
+        }
+
+        &--mail::before {
+            background-image: url(../img/email.png);
+            width: 3.2rem;
+            height: 3.6rem;
+        }
+
+        &--skype::before {
+            background-image: url(../img/skype.png);
+            width: 3.2rem;
+            height: 3.2rem;
+        }
+
+        & > span {
+            font-family: $museo100;
+            font-size: 1.6rem;
+            color: #000;
+        }
+    }
+
+    &__heading {
+        font-family: $museo900;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        color: #000;
+        margin-bottom: 1.5rem;
+    }
+
+    &__form-heading {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+
+        & > span {
+            font-family: $museo900;
+            text-transform: uppercase;
+            color: #fff;
+            text-align: center;
+            font-size: 2rem;
+            line-height: 1.4;
+        }
+    }
+
+    &__form-text {
+        font-size: $museo100;
+        text-transform: uppercase;
+        color: #fff;
+        text-align: center;
+        font-size: 1.8rem;
+        line-height: 1.4;
+        margin-bottom: 2.5rem;
+    }
+}

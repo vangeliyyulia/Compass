@@ -1,0 +1,32 @@
+.btn {
+    display: inline-block;
+    background-color: transparent;
+    padding: 2rem 3rem;
+    font-family: $museo900;
+    font-size: 1.5rem;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: background-color .2s;
+
+    &:hover,
+    &:active {
+        background-color: rgba(255, 255, 255, .21);
+    }
+
+    &--moving {
+        color: #fff;
+        border: 2px solid #fff;
+    }
+
+    &--blue {
+        color: $aqua;
+        border: 2px solid $aqua;
+
+        &:hover,
+        &:active {
+            background-color: rgba($aqua, .21);
+        }
+    }
+}
